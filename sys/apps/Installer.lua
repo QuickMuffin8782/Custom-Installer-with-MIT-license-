@@ -1,10 +1,11 @@
+
 local colors  = _G.colors
 local fs      = _G.fs
 local http    = _G.http
 local install = _ENV.install
 local os      = _G.os
 
-local url ='https://raw.githubusercontent.com/QuickMuffin8782/opus-installer/master/sys/apis/injector.lua'
+local url ='https://raw.githubusercontent.com/QuickMuffin8782/Custom-Installer-with-MIT-license/master/sys/apis/injector.lua'
 local injector = load(http.get(url).readAll(), 'injector.lua', nil, _ENV)()
 
 -- install a require that only searches github
@@ -102,7 +103,7 @@ end
 
 --[[ Splash ]]--
 function pages.splash:enable()
-	page.titleBar.title = 'Installer v1.0'
+	page.titleBar.title = install.title .. ' Installer'
 	page.titleBar:draw()
 	UI.Viewport.enable(self)
 end
